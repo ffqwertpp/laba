@@ -1,0 +1,30 @@
+# Visual Studio / CMake build outputs
+**/build/
+**/CMakeFiles/
+**/CMakeCache.txt
+**/build.ninja
+**/cmake_install.cmake
+**/*.exe
+**/*.ilk
+**/*.pdb
+**/*.obj
+**/*.lib
+**/*.dll
+**/*.ifc
+**/*.modmap
+**/*.ddi
+
+# NuGet packages
+.nuget/
+**/packages/
+
+# User files
+*.user
+*.suo
+*.vcxproj.user
+
+# Temporary files
+*.tmp
+*.log
+.ipch/
+*.cache
