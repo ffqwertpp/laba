@@ -1,12 +1,6 @@
-﻿cmake_minimum_required(VERSION 4.2)
-
-set(CMAKE_EXPERIMENTAL_CXX_IMPORT_STD d0edc3af-4c50-42ea-a356-e2862fe7a444)
+﻿set(CMAKE_EXPERIMENTAL_CXX_IMPORT_STD d0edc3af-4c50-42ea-a356-e2862fe7a444)
 set(CMAKE_CXX_MODULE_STD ON)
-
-project(Lab1 LANGUAGES CXX)
-
 set(LAB_NAME lab1)
-
 
 add_executable("${LAB_NAME}")
 
@@ -15,5 +9,5 @@ target_compile_options("${LAB_NAME}" PRIVATE /utf-8)
 
 target_sources("${LAB_NAME}" 
 	PRIVATE 
-	reference/main.cpp
+	source/main.cpp
 )

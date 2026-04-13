@@ -1,4 +1,4 @@
-#pragma once;
+#pragma once
 
 export module funcs;
 import std;
@@ -26,11 +26,12 @@ export void setVectorRandom(std::vector<int>& vec, int n) {
     }
 }
 
-export void getVector(std::vector<int>& vec, int n) {
-    for (int i = 0; i < n; ++i)
+export void getVector(std::vector<int>& vec) {
+    for (int& x : vec)
     {
-        std::println("{} элемент: {}", i + 1, vec[i]);
+        std::print("{} ", x);
     }
+    std::println("");
 }
 
 export void processVector(std::vector<int>& vec, int n) {
