@@ -3,7 +3,7 @@
 export module pawn;
 import std;
 
-class Pawn {
+export class Pawn {
     private:
         bool color = true;
         int x = 0;
@@ -20,6 +20,14 @@ class Pawn {
 
         int getY() const {
             return y;
+        }
+        
+        int getColor() const {
+            return color;
+        }
+
+        int getCoordinates() const {
+            return (x, y);
         }
 
         bool canMove(int newX, int newY) const {
@@ -50,8 +58,8 @@ class Pawn {
             }
         }
 
-        bool canMoveWithAnotherPawns(int newX, int newY, const std::vector<Pawn>& otherPawns) const {
-            for (const auto& pawn : otherPawns) {
+        bool canMoveWithAnotherPawns(int newX, int newY, const std::vector<Pawn>& Pawns) const {
+            for (const auto& pawn : Pawns) {
                 if (pawn.getX() == newX && pawn.getY() == newY) {
                     return false;
                 }
@@ -59,9 +67,9 @@ class Pawn {
             return true;
         }
 
-        bool canCaptureWithAnotherPawns(int newX, int newY, const std::vector<Pawn>& otherPawns) const {
-            for (const auto& pawn : otherPawns) {
-                if (pawn.getX() == newX && pawn.getY() == newY) {
+        bool canCaptureWithAnotherPawns(int newX, int newY, const std::vector<Pawn>& Pawns) const {
+            for (const auto& pawn : Pawns) {
+                if (pawn.getX() == newX && pawn.getY() == newY && pawn.getColor() != color) {
                     return true;
                 }
             }
@@ -69,8 +77,8 @@ class Pawn {
         }
 };
 
-Pawn findPawnWhichCanMoveOnCoordinates(int x, int y, const std::vector<Pawn>& pawns) {
-    for (const auto& pawn : pawns) {
+export Pawn findPawnWhichCanMoveOnCoordinates(int x, int y, const std::vector<Pawn>& Pawns) {
+    for (const auto& pawn : Pawns) {
         if (pawn.canMove(x, y)) {
             return pawn;
         }
