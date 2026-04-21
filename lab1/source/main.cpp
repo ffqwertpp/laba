@@ -37,3 +37,12 @@ int main() {
 
 	return 0;
 }
+
+int elem = 0;
+int result = 1;
+int n = 4;
+
+for(int i = 0; i < n; ++i) {
+	std::cin >> elem;
+	result *= elem;
+}

@@ -92,7 +92,7 @@ export void inGameMenu(std::vector<Pawn>& pawns) {
 3. Вывести вектор пешек\n");
         std::cin >> choice;
 
-        switch(choice > 0) {
+        switch(choice) {
             case 1: {
                 std::println("Введите начальную позицию пешки(x y):");
                 int startX, startY;

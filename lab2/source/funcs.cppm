@@ -3,7 +3,9 @@
 export module funcs;
 import std;
 
-export void setVector(std::vector<int>& vec, int n) {
+export std::vector<int> setVector(int n) {
+    std::vector<int> vec = {};
+    
     for (int i = 0; i < n; i++)
     {
         std::println("Введите {} элемент: ", i + 1);
@@ -12,32 +14,36 @@ export void setVector(std::vector<int>& vec, int n) {
         std::cin >> element;
         vec.push_back(element);
     }
+
+    return vec;
 }
 
-export void setVectorRandom(std::vector<int>& vec, int n) {
+export std::vector<int> setVectorRandom(int n) {
+    std::vector<int> vec(n); 
+
     std::random_device rd;
     std::mt19937 gen(rd());
     std::uniform_int_distribution<int> dist(-10, 10);
 
-    vec.resize(n);
-
     for (int& x : vec) {
         x = dist(gen);
     }
+
+    return vec;
 }
 
-export void getVector(std::vector<int>& vec) {
-    for (int& x : vec)
+export void getVector(const std::vector<int>& vec) {
+    for (const int& x : vec)
     {
         std::print("{} ", x);
     }
     std::println("");
 }
 
-export void processVector(std::vector<int>& vec, int n) {
+export int processVector(const std::vector<int>& vec) {
     int prod = 1;
-    for (int& x : vec) {
+    for (const int& x : vec) {
         prod *= x;
     }
-    std::println("Произведение элементов последовательности: {} \n Количество элементов {}", prod, n);
+    return prod;
 }

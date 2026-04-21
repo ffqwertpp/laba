@@ -69,7 +69,7 @@ export class Pawn {
 
         bool canCaptureWithAnotherPawns(int newX, int newY, const std::vector<Pawn>& Pawns) const {
             for (const auto& pawn : Pawns) {
-                if (pawn.getX() == newX && pawn.getY() == newY && pawn.getColor() != color) {
+                if (pawn.getX() == newX && pawn.getY() == newY) {
                     return true;
                 }
             }

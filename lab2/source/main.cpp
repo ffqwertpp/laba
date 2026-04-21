@@ -32,19 +32,21 @@ int main() {
 0. Выход\n");
 
         std::cin >> choice;
+        int result = 0;
 
         switch (choice)
         {
         case 1:
-            setVector(vec, n);
+            vec = setVector(n);
             getVector(vec);
             break;
         case 2:
-            setVectorRandom(vec, n);
+            vec = setVectorRandom(n);
             getVector(vec);
             break;
         case 3:
-            processVector(vec, n);
+            result = processVector(vec);
+            std::println("Произведение элементов: {} Кол-во элементов {}", result, vec.size());
             break;
         case 0:
             break;
